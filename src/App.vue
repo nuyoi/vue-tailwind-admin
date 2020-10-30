@@ -1,32 +1,24 @@
 <template>
-  <div id="app">
-    <div id="nav">
+  <div id="app" class="flex flex-wrap">
+    <!-- SideBar -->
+    <div id="nav" class="w-1/5 bg-gray-900 h-screen">
+      <ul class="list-reset flex flex-col text-gray-400">
+        <li class="pl-3">
+          <router-link to="/">
+            <i class="fas fa-chart-pie"></i>
+            <span class="pl-3 inline-block align-middle">대시보드</span>
+          </router-link>
+        </li>
+      </ul>
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view />
+
+    <!-- Main Content -->
+    <div class="w-4/5 bg-gray-100">
+      <router-view />
+    </div>
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style src="./assets/tailwind.css" />
